@@ -236,11 +236,16 @@
   nat-int?)
 
 
+(s/def :cljstyle.config.rules.namespaces/vector-for-imports?
+  boolean?)
+
+
 (s/def :cljstyle.config.rules/namespaces
   (s/keys :opt-un [:cljstyle.config.rules.global/enabled?
                    :cljstyle.config.rules.namespaces/indent-size
                    :cljstyle.config.rules.namespaces/break-libs?
-                   :cljstyle.config.rules.namespaces/import-break-width]))
+                   :cljstyle.config.rules.namespaces/import-break-width
+                   :cljstyle.config.rules.namespaces/vector-for-imports?]))
 
 
 ;; #### Rules Map
@@ -356,7 +361,8 @@
     {:enabled? true
      :indent-size 2
      :break-libs? true
-     :import-break-width 60}}})
+     :import-break-width 60
+     :vector-for-imports? false}}})
 
 
 (def default-config
